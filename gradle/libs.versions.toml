@@ -1,15 +1,15 @@
 [versions]
-agp = "8.4.0"
-androidTools = "31.4.1"
-kotlin = "1.9.0"
-ksp = "1.9.21-1.0.16"
+agp = "8.4.2"
+androidTools = "31.5.0"
+kotlin = "1.9.23"
+ksp = "2.0.0-1.0.21"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
-lifecycleRuntimeKtx = "2.8.1"
+lifecycleRuntimeKtx = "2.8.2"
 activityCompose = "1.9.0"
-composeBom = "2023.08.00"
+composeBom = "2024.06.00"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
