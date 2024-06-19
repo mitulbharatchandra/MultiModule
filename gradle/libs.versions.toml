@@ -42,4 +42,5 @@ android-test = { id = "com.android.test", version.ref = "agp" }
 
 # Plugins defined by this project
 multimodule-android-application = { id = "multimodule.android.application", version = "unspecified" }
+multimodule-android-library = { id = "multimodule.android.library", version = "unspecified" }
 
