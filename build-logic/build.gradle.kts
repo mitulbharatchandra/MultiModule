@@ -36,5 +36,9 @@ gradlePlugin {
             id = "multimodule.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
+        register("androidLibrary") {
+            id = "multimodule.android.library"
+            implementationClass = "AndroidLibraryConventionPlugin"
+        }
     }
 }
