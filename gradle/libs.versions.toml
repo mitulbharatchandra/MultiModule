@@ -2,7 +2,7 @@
 agp = "8.4.2"
 androidTools = "31.5.0"
 kotlin = "1.9.23"
-ksp = "2.0.0-1.0.21"
+ksp = "1.9.21-1.0.16"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -14,6 +14,7 @@ androidxComposeCompiler = "1.5.13"
 androidxHiltNavigationCompose = "1.2.0"
 androidxLifecycle = "2.8.2"
 androidxTracing = "1.3.0-alpha02"
+hilt = "2.50"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -41,6 +42,9 @@ android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", ver
 android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -48,6 +52,8 @@ jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = 
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 android-test = { id = "com.android.test", version.ref = "agp" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 # Plugins defined by this project
 multimodule-android-application = { id = "multimodule.android.application", version = "unspecified" }
@@ -55,4 +61,4 @@ multimodule-android-library = { id = "multimodule.android.library", version = "u
 multimodule-android-application-compose = { id = "multimodule.android.application.compose", version = "unspecified" }
 multimodule-android-library-compose = { id = "multimodule.android.library.compose", version = "unspecified"}
 multimodule-android-feature = { id = "multimodule.android.feature", version = "unspecified" }
-
+multimodule-android-hilt = { id = "multimodule.android.hilt", version = "unspecified" }
