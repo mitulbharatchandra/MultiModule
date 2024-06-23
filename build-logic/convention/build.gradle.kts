@@ -48,5 +48,9 @@ gradlePlugin {
             id = "multimodule.android.library.compose"
             implementationClass = "AndroidLibraryComposeConventionPlugin"
         }
+        register("androidFeature") {
+            id = "multimodule.android.feature"
+            implementationClass = "AndroidFeatureConventionPlugin"
+        }
     }
 }
