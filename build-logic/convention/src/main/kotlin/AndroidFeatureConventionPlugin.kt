@@ -7,8 +7,8 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             pluginManager.apply {
-                apply("nowinandroid.android.library")
-                //apply("nowinandroid.android.hilt")
+                apply("multimodule.android.library")
+                apply("multimodule.android.hilt")
             }
 
             dependencies {

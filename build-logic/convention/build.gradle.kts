@@ -52,5 +52,9 @@ gradlePlugin {
             id = "multimodule.android.feature"
             implementationClass = "AndroidFeatureConventionPlugin"
         }
+        register("androidHilt") {
+            id = "multimodule.android.hilt"
+            implementationClass = "AndroidHiltConventionPlugin"
+        }
     }
 }
