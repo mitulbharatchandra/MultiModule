@@ -3,7 +3,6 @@ package com.app.multimodule.core.resource_assets
 import androidx.annotation.VisibleForTesting
 import java.io.File
 import java.io.InputStream
-import java.util.Properties
 
 @VisibleForTesting
 internal object JvmUnitTestFakeAssetManager : AssetManager {
