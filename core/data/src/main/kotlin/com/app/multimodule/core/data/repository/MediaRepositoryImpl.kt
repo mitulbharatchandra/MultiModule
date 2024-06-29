@@ -7,6 +7,6 @@ import javax.inject.Inject
 class MediaRepositoryImpl @Inject constructor(private val assetsDataSource: AssetsDataSource) : MediaRepository {
 
     override suspend fun getMedia(): Media {
-        return assetsDataSource.getMedia()
+        return assetsDataSource.getMedia("")
     }
 }
