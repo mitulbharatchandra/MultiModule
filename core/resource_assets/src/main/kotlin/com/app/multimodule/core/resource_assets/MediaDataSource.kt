@@ -2,6 +2,6 @@ package com.app.multimodule.core.resource_assets
 
 import com.app.multimodule.core.resource_assets.model.Media
 
-interface AssetsDataSource {
-    suspend fun getMedia(fileName: String): Media
+interface MediaDataSource {
+    suspend fun getMedia(): Media
 }
