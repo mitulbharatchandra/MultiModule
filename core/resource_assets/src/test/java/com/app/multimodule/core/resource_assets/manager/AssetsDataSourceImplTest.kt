@@ -27,7 +27,7 @@ class AssetsDataSourceImplTest {
 
     @Test
     fun testDeserializationOfMedia() = runTest(testDispatcher) {
-        val media = subject.getMedia("media.json")
+        val media = subject.getMedia()
         val titleHome = media.items.first().title
         val idHome = media.items.first().id
         val homeContentFirstItemId = media.items.first().content?.items?.first()?.id
@@ -45,7 +45,7 @@ class AssetsDataSourceImplTest {
 
     @Test
     fun testDeserializationOfEnum() = runTest(testDispatcher) {
-        val media = subject.getMedia("media.json")
+        val media = subject.getMedia()
         val parentDisplayStyle = media.displayStyle
         val homeContentDisplayStyle = media.items.first().content?.displayStyle
         val homeContentInnerItemsDisplayStyle = media.items.first().content?.items?.get(6)?.content?.displayStyle

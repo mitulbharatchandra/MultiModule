@@ -5,7 +5,7 @@ package com.app.multimodule.core.resource_assets.manager
 import com.app.multimodule.core.common.network.Dispatcher
 import com.app.multimodule.core.common.network.MultiModuleDispatchers
 import com.app.multimodule.core.resource_assets.AssetManager
-import com.app.multimodule.core.resource_assets.AssetsDataSource
+import com.app.multimodule.core.resource_assets.MediaDataSource
 import com.app.multimodule.core.resource_assets.model.Media
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
@@ -18,11 +18,11 @@ class AssetsDataSourceImpl @Inject constructor(
     @Dispatcher(MultiModuleDispatchers.IO) private val ioDispatcher: CoroutineDispatcher,
     private val assetManager: AssetManager,
     private val networkJson: Json
-): AssetsDataSource {
+): MediaDataSource {
 
-    override suspend fun getMedia(fileName: String): Media =
+    override suspend fun getMedia(): Media =
         withContext(ioDispatcher) {
-            assetManager.open(fileName).use(networkJson::decodeFromStream)
+            assetManager.open("media.json").use(networkJson::decodeFromStream)
         }
 
 }
