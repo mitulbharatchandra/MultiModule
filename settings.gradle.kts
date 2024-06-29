@@ -22,4 +22,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "MultiModule"
 include(":app")
- 
+include(":core")
+include(":core:common")
+include(":core:resource_assets")
