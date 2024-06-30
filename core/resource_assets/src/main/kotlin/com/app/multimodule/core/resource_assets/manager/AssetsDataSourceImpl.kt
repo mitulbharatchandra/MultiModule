@@ -20,9 +20,9 @@ class AssetsDataSourceImpl @Inject constructor(
     private val networkJson: Json
 ): AssetsDataSource {
 
-    override suspend fun getMedia(): Media =
+    override suspend fun getMedia(fileName: String): Media =
         withContext(ioDispatcher) {
-            assetManager.open("media.json").use(networkJson::decodeFromStream)
+            assetManager.open(fileName).use(networkJson::decodeFromStream)
         }
 
 }
