@@ -5,6 +5,6 @@ import java.io.File
 import java.io.InputStream
 
 @VisibleForTesting
-internal object JvmUnitTestFakeAssetManager : AssetManager {
+object JvmUnitTestFakeAssetManager : AssetManager {
     override fun open(fileName: String): InputStream = File("../../core/resource_assets/src/main/assets/", fileName).inputStream()
 }
