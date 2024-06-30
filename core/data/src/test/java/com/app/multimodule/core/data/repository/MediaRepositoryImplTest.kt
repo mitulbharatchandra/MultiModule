@@ -30,16 +30,16 @@ class MediaRepositoryImplTest{
 
     @Test
     fun testDeserializationOfMedia() = runTest(testDispatcher) {
-        val media = subject.getMedia()
-        val titleHome = media.items.first().title
-        val idHome = media.items.first().id
-        val homeContentFirstItemId = media.items.first().content?.items?.first()?.id
-        val homeContentInnerItemId = media.items.first().content?.items?.get(6)?.content?.items?.first()?.id
-        val idLibrary = media.items.last().id
-        val libraryContentCount = media.items.last().content?.items?.count()
+        val media = subject.getMedia().getOrNull()
+        val titleHome = media?.items?.first()?.title
+        val idHome = media?.items?.first()?.id
+        val homeContentFirstItemId = media?.items?.first()?.content?.items?.first()?.id
+        val homeContentInnerItemId = media?.items?.first()?.content?.items?.get(6)?.content?.items?.first()?.id
+        val idLibrary = media?.items?.last()?.id
+        val libraryContentCount = media?.items?.last()?.content?.items?.count()
         assertEquals("Home", titleHome)
         assertEquals("home", idHome)
-        assertEquals(4, media.items.count())
+        assertEquals(4, media?.items?.count())
         assertEquals("track1", homeContentFirstItemId)
         assertEquals("track9", homeContentInnerItemId)
         assertEquals("library", idLibrary)
@@ -48,10 +48,10 @@ class MediaRepositoryImplTest{
 
     @Test
     fun testDeserializationOfEnum() = runTest(testDispatcher) {
-        val media = subject.getMedia()
-        val parentDisplayStyle = media.displayStyle
-        val homeContentDisplayStyle = media.items.first().content?.displayStyle
-        val homeContentInnerItemsDisplayStyle = media.items.first().content?.items?.get(6)?.content?.displayStyle
+        val media = subject.getMedia().getOrNull()
+        val parentDisplayStyle = media?.displayStyle
+        val homeContentDisplayStyle = media?.items?.first()?.content?.displayStyle
+        val homeContentInnerItemsDisplayStyle = media?.items?.first()?.content?.items?.get(6)?.content?.displayStyle
         assertEquals(DisplayStyle.GRID, parentDisplayStyle)
         assertEquals(DisplayStyle.GRID, homeContentDisplayStyle)
         assertEquals(DisplayStyle.LIST, homeContentInnerItemsDisplayStyle)
