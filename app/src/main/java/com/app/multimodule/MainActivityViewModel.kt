@@ -50,4 +50,12 @@ class MainActivityViewModel @Inject constructor(
                 }
         }
     }
+
+    fun onEvent(event: MainUiEvent) {
+        when(event) {
+            is MainUiEvent.OnNavigate -> _uiState.update {
+                it.copy(selectedItemIndex = event.index)
+            }
+        }
+    }
 }

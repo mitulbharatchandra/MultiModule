@@ -50,17 +50,14 @@ class MainActivity : ComponentActivity() {
             MultiModuleTheme {
                 val uiState by viewModel.uiState.collectAsStateWithLifecycle()
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    var selectedItemIndex by remember {
-                        mutableIntStateOf(0)
-                    }
                     val windowWidthClass = currentWindowAdaptiveInfo().windowSizeClass.windowWidthSizeClass
                     NavigationSuiteScaffold(
                         navigationSuiteItems = {
                             uiState.media?.items?.forEachIndexed { index, uiItem ->
                                 item(
-                                    selected = index == selectedItemIndex,
+                                    selected = index == uiState.selectedItemIndex,
                                     onClick = {
-                                        selectedItemIndex = index
+                                        viewModel.onEvent(MainUiEvent.OnNavigate(index))
                                     },
                                     icon = {
                                         AsyncImage(
@@ -94,11 +91,7 @@ class MainActivity : ComponentActivity() {
                                 .fillMaxSize(),
                             contentAlignment = Alignment.Center
                         ) {
-                            uiState.media?.items?.forEachIndexed { index, item ->
-                                if(selectedItemIndex == index) {
-                                    Text(text = item.title)
-                                }
-                            }
+                            Text(text = uiState.media?.items?.get(uiState.selectedItemIndex)?.title ?: "No Element")
                         }
                     }
                 }
