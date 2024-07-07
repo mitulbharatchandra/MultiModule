@@ -5,14 +5,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.R
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
@@ -21,9 +17,6 @@ import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffo
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteType
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -50,7 +43,8 @@ class MainActivity : ComponentActivity() {
             MultiModuleTheme {
                 val uiState by viewModel.uiState.collectAsStateWithLifecycle()
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    val windowWidthClass = currentWindowAdaptiveInfo().windowSizeClass.windowWidthSizeClass
+                    val windowWidthClass =
+                        currentWindowAdaptiveInfo().windowSizeClass.windowWidthSizeClass
                     NavigationSuiteScaffold(
                         navigationSuiteItems = {
                             uiState.media?.items?.forEachIndexed { index, uiItem ->
@@ -78,7 +72,7 @@ class MainActivity : ComponentActivity() {
                                 )
                             }
                         },
-                        layoutType = if(windowWidthClass == WindowWidthSizeClass.EXPANDED) {
+                        layoutType = if (windowWidthClass == WindowWidthSizeClass.EXPANDED) {
                             NavigationSuiteType.NavigationDrawer
                         } else {
                             NavigationSuiteScaffoldDefaults.calculateFromAdaptiveInfo(
@@ -91,7 +85,10 @@ class MainActivity : ComponentActivity() {
                                 .fillMaxSize(),
                             contentAlignment = Alignment.Center
                         ) {
-                            Text(text = uiState.media?.items?.get(uiState.selectedItemIndex)?.title ?: "No Element")
+                            Text(
+                                text = uiState.media?.items?.get(uiState.selectedItemIndex)?.title
+                                    ?: "No Element"
+                            )
                         }
                     }
                 }
