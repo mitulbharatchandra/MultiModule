@@ -1,10 +1,11 @@
 package com.app.multimodule
 
-import com.app.multimodule.core.resource_assets.model.Media
+import com.app.multimodule.core.common.model.ItemVM
+import com.app.multimodule.core.common.model.MediaVM
 
 data class MainActivityUiState(
     val isLoading: Boolean = true,
     val errorMessage: String? = null,
-    val media: Media? = null,
-    val selectedItemIndex: Int = 0
+    val media: MediaVM? = null,
+    val selectedItem: ItemVM? = null
 )

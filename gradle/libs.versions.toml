@@ -22,8 +22,10 @@ kotlinxCoroutines = "1.7.3"
 secrets = "2.0.1"
 lifecycleRuntimeComposeAndroid = "2.8.3"
 adaptiveNavigationSuite = "1.0.0-alpha07"
-material3-adaptive = "1.0.0-beta04"
 coilCompose = "2.6.0"
+uiToolingPreviewAndroid = "1.6.8"
+adaptive = "1.0.0-beta04"
+adaptiveAndroid = "1.0.0-beta04"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -44,12 +46,13 @@ androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
-androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutines" }
 androidx-compose-material3-adaptive-navigation-suite = { module = "androidx.compose.material3:material3-adaptive-navigation-suite", version.ref = "adaptiveNavigationSuite" }
-androidx-compose-material3-adaptive-navigation = { module = "androidx.compose.material3.adaptive:adaptive-navigation", version.ref = "material3-adaptive" }
+androidx-compose-material3-adaptive-navigation = { module = "androidx.compose.material3.adaptive:adaptive-navigation", version.ref = "adaptive" }
+androidx-compose-material3-adaptive = { module = "androidx.compose.material3.adaptive:adaptive", version.ref = "adaptive" }
+androidx-compose-material3-adaptive-layout = { module = "androidx.compose.material3.adaptive:adaptive-layout", version.ref = "adaptive" }
 
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
@@ -63,6 +66,8 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-lifecycle-runtime-compose-android = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose-android", version.ref = "lifecycleRuntimeComposeAndroid" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+androidx-ui-tooling-preview-android = { group = "androidx.compose.ui", name = "ui-tooling-preview-android", version.ref = "uiToolingPreviewAndroid" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -78,6 +83,6 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 multimodule-android-application = { id = "multimodule.android.application", version = "unspecified" }
 multimodule-android-library = { id = "multimodule.android.library", version = "unspecified" }
 multimodule-android-application-compose = { id = "multimodule.android.application.compose", version = "unspecified" }
-multimodule-android-library-compose = { id = "multimodule.android.library.compose", version = "unspecified"}
+multimodule-android-library-compose = { id = "multimodule.android.library.compose", version = "unspecified" }
 multimodule-android-feature = { id = "multimodule.android.feature", version = "unspecified" }
 multimodule-android-hilt = { id = "multimodule.android.hilt", version = "unspecified" }

@@ -2,8 +2,6 @@ package com.app.multimodule.core.resource_assets.di
 
 import android.content.Context
 import com.app.multimodule.core.resource_assets.AssetManager
-import com.app.multimodule.core.resource_assets.AssetsDataSource
-import com.app.multimodule.core.resource_assets.manager.AssetsDataSourceImpl
 import com.app.multimodule.core.resource_assets.manager.AssetsManagerImpl
 import dagger.Module
 import dagger.Provides
@@ -16,7 +14,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-internal object AssetManagerModule{
+internal object AssetManagerModule {
 
     @Provides
     @Singleton

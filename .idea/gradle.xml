@@ -30,6 +30,7 @@
             <option value="$PROJECT_DIR$/core/resource_assets" />
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/dashboard" />
+            <option value="$PROJECT_DIR$/feature/itemdetails" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
