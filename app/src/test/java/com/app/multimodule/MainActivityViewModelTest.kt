@@ -1,9 +1,10 @@
 package com.app.multimodule
 
+import com.app.multimodule.core.common.model.DisplayStyle
+import com.app.multimodule.core.common.model.Item
+import com.app.multimodule.core.common.model.Media
+import com.app.multimodule.core.common.model.toMediaVM
 import com.app.multimodule.core.data.repository.TestMediaRepository
-import com.app.multimodule.core.resource_assets.model.DisplayStyle
-import com.app.multimodule.core.resource_assets.model.Item
-import com.app.multimodule.core.resource_assets.model.Media
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -38,11 +39,13 @@ class MainActivityViewModelTest {
         val result = Result.success(
             Media(
                 displayStyle = DisplayStyle.GRID,
-                items = listOf(Item(
-                    id = "1",
-                    title = "test",
-                    subtitle = "subtitle test"
-                ))
+                items = listOf(
+                    Item(
+                        id = "1",
+                        title = "test",
+                        subtitle = "subtitle test"
+                    )
+                )
             )
         )
         testMediaRepository = TestMediaRepository()
@@ -50,7 +53,7 @@ class MainActivityViewModelTest {
         subject = MainActivityViewModel(mediaRepository = testMediaRepository)
         backgroundScope.launch(UnconfinedTestDispatcher()) { subject.uiState.collect() }
 
-        assertEquals(result.getOrNull(), subject.uiState.value.media)
+        assertEquals(result.getOrNull()?.toMediaVM()?.items, subject.uiState.value.media?.items)
         assertEquals(false, subject.uiState.value.isLoading)
         assertEquals(null, subject.uiState.value.errorMessage)
     }

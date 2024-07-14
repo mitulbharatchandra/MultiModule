@@ -1,4 +1,4 @@
-package com.app.multimodule.core.resource_assets.model
+package com.app.multimodule.core.common.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -26,8 +26,15 @@ data class Item(
 
 @Serializable
 enum class DisplayStyle(val displayStyle: String) {
-    @SerialName("grid")
-    GRID("grid"),
-    @SerialName("list")
-    LIST("list")
+    /*@SerialName("vertical_grid")
+    VERTICAL_GRID("vertical_grid"),*/
+
+    @SerialName("horizontal_grid")
+    HORIZONTAL_GRID("horizontal_grid"),
+
+    @SerialName("vertical_list")
+    VERTICAL_LIST("vertical_list"),
+
+    /*@SerialName("horizontal_list")
+    HORIZONTAL_LIST("horizontal_list")*/
 }

@@ -1,7 +1,7 @@
 package com.app.multimodule.core.data.repository
 
+import com.app.multimodule.core.common.model.Media
 import com.app.multimodule.core.resource_assets.AssetsDataSource
-import com.app.multimodule.core.resource_assets.model.Media
 import javax.inject.Inject
 import kotlin.coroutines.cancellation.CancellationException
 
@@ -13,7 +13,7 @@ class MediaRepositoryImpl @Inject constructor(
         return try {
             Result.success(assetsDataSource.getMedia("media.json"))
         } catch (e: Exception) {
-            if(e is CancellationException) throw e
+            if (e is CancellationException) throw e
             e.printStackTrace()
             Result.failure(exception = e)
         }
